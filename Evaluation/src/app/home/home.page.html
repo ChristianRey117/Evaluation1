@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="isLoginCard">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="loginForm">
+        <ion-item>
+          <ion-input formControlName="email" label="Enter your email" labelPlacement="floating" placeholder="Please enter your email" type="email"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input formControlName="password" label="Enter your password" labelPlacement="floating" placeholder="Please enter your password" type="password"></ion-input>
+        </ion-item>
+      </form>
+      
+      
+
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!isLoginCard">
+    <ion-card-header>
+      <ion-card-title>Register</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="registerForm">
+        <ion-item>
+          <ion-input formControlName="name" label="Enter your name" labelPlacement="floating" placeholder="Please enter your name" type="text"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-input formControlName="lastName" label="Enter your last name" labelPlacement="floating" placeholder="Please enter your last name" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input formControlName="email" label="Enter your email" labelPlacement="floating" placeholder="Please enter your email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input formControlName="password" label="Enter your password" labelPlacement="floating" placeholder="Please enter your password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input formControlName="confirmPassword" label="Confirm your password" labelPlacement="floating" placeholder="Please confirm your password" type="password"></ion-input>
+        </ion-item>
+      </form>
+
+        <h3>{{message}}</h3>
+    
+      
+      
+
+      
+    </ion-card-content>
+  </ion-card>
+
+  <div class="buttons-login">
+    <ion-button (click)="activeRegisterCard()">Register</ion-button>
+    <ion-button (click)="activeLoginCard()">Login</ion-button>
+  </div>
+</ion-content>
